@@ -139,7 +139,13 @@ class Program
             Console.ResetColor();
             SaveDebts(debts);
 
-            break;
+
+            Console.Write("Do you want to add another debt? (yes/no): ");
+            string answer = Console.ReadLine()?.Trim() ?? "";
+
+            if (!answer.Equals("yes", StringComparison.OrdinalIgnoreCase))
+                break;
+
         }
 
         Console.WriteLine();
